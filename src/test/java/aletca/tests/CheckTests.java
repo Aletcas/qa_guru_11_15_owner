@@ -14,7 +14,6 @@ import static io.qameta.allure.Allure.step;
 
 public class CheckTests extends TestBase {
 
-
     @Test
     void checkFromLocalPropertiesFile() {
         System.setProperty("runType", "local");
@@ -23,7 +22,6 @@ public class CheckTests extends TestBase {
         Assertions.assertEquals("99.0", owner.browserVersion());
     }
 
-
     @Test
     @DisplayName("Проверка наличия лого.")
     public void logoCheckTest() {
@@ -31,7 +29,6 @@ public class CheckTests extends TestBase {
 
         step("перейти на страницу", () -> {
             open( owner.getBaseUrl());
-
         });
 
         step("проверить правильность отображения лого", () -> {
