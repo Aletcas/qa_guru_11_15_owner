@@ -8,9 +8,9 @@ repositories {
 }
 
 def allureVersion = "2.17.3",
-    selenideVersion = "6.3.4",
+    selenideVersion = '6.3.5',
     junitVersion = "5.8.2",
-    slf4jVersion = "1.7.32"
+    slf4jVersion = '1.7.36'
 
 
 allure {
@@ -29,14 +29,14 @@ allure {
 
 dependencies {
     testImplementation(
-            'org.aspectj:aspectjweaver:1.9.8',
+            'org.aspectj:aspectjweaver:1.9.9',
             "org.aeonbits.owner:owner:1.0.12",
             'org.assertj:assertj-core:3.22.0',
             "com.codeborne:selenide:$selenideVersion",
             "io.qameta.allure:allure-selenide:$allureVersion",
             "org.junit.jupiter:junit-jupiter-api:$junitVersion")
     testRuntimeOnly(
-            "org.slf4j:slf4j-simple:$slf4jVersion", // не обновлять
+            "org.slf4j:slf4j-simple:$slf4jVersion", // не обновлять 1.7.32
             "org.junit.jupiter:junit-jupiter-engine:$junitVersion")
 }
 
