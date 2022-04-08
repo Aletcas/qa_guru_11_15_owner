@@ -4,7 +4,7 @@ import org.aeonbits.owner.Config;
 
 @Config.Sources({
         "classpath:token.properties",
-        "system:properties"
+        "system:properties" //берет данные из терминала
 })
 
 public interface ApiConfig extends Config {
