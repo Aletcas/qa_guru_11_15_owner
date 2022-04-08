@@ -15,4 +15,6 @@ public interface WebDriverConfig extends Config{
     @DefaultValue("chrome")
     Browser getBrowser();
 
+    @Key("selenoidUrl")
+    String selenoidUrl();
 }
