@@ -1,9 +1,5 @@
 package aletca.tests;
 
-import aletca.config.ProjectConfig;
-import aletca.config.WebDriverConfig;
-import org.aeonbits.owner.ConfigFactory;
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -15,20 +11,11 @@ import static io.qameta.allure.Allure.step;
 public class CheckTests extends TestBase {
 
     @Test
-    void checkFromLocalPropertiesFile() {
-        System.setProperty("runType", "local");
-        ProjectConfig owner = ConfigFactory.create(ProjectConfig.class, System.getProperties());
-        Assertions.assertEquals("chrome", owner.browserName());
-        Assertions.assertEquals("99.0", owner.browserVersion());
-    }
-
-    @Test
     @DisplayName("Проверка наличия лого.")
     public void logoCheckTest() {
-        WebDriverConfig owner = ConfigFactory.create(WebDriverConfig.class, System.getProperties());
 
         step("перейти на страницу", () -> {
-            open( owner.getBaseUrl());
+            open("https://smolensk.hh.ru/employer/3323853");
         });
 
         step("проверить правильность отображения лого", () -> {
